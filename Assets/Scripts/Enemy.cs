@@ -6,7 +6,9 @@ public class Enemy : MonoBehaviour
 {
 
     public float speed = 10f;
+    public int enemyLife = 3;
     private Transform target;
+    public int enemyDamage = 1;
     private int waypointindex = 0;
 
     // Start is called before the first frame update
@@ -24,6 +26,7 @@ public class Enemy : MonoBehaviour
         if (waypointindex == Waypoints.points.Length)
         {
             gameObject.SetActive(false);
+            Base.substractBaseLife(1);
             Destroy(gameObject);
             return;
         }
@@ -43,5 +46,14 @@ public class Enemy : MonoBehaviour
             return Waypoints.points[Waypoints.points.Length-1];
         else
             return Waypoints.points[waypointindex];
+    }
+
+    public void EnemyHit(int turretDamage)
+    {
+        enemyLife -= turretDamage;
+        if (enemyLife <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }
