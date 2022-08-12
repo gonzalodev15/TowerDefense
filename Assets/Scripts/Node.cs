@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Node : MonoBehaviour
 {
@@ -8,7 +9,9 @@ public class Node : MonoBehaviour
     private Color startColor;
     private GameObject turret;
 
-    public GameObject turretPrefab;
+    //public GameObject turretPrefab;
+    private TurretManager turretManager;
+    public Turret manager;
     private float turretOffset = 0.5f;
 
     // Start is called before the first frame update
@@ -37,9 +40,14 @@ public class Node : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if(EventSystem.current.IsPointerOverGameObject())
+        {
+            return;
+        }
+
         if (turret == null)
         {
-            turret = (GameObject) Instantiate(turretPrefab, transform.position + new Vector3(0, turretOffset, 0), transform.rotation);
+            turret = (GameObject) Instantiate(TurretManager.instance.getCurrentTurret(), transform.position + new Vector3(0, turretOffset, 0), transform.rotation);
         } 
     }
 }
