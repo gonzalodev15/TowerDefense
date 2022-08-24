@@ -9,6 +9,7 @@ public class Brain : MonoBehaviour
     public Transform spawnPoint;
 
     public Text text;
+    public Text currency;
     public float timeBetweenWaves = 5f;
     private float countdown = 2f;
     private int waveNumber = 0;

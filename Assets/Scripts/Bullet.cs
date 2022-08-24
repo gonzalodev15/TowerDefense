@@ -7,6 +7,7 @@ public class Bullet : MonoBehaviour
     private Transform _target;
     public GameObject _particles;
     public float speed = 70;
+    public float radius = 10f;
 
     public void setTarget(Transform target)
     {
@@ -35,14 +36,38 @@ public class Bullet : MonoBehaviour
             hitTarget();
         }
         transform.Translate(dir.normalized*distanceThisFrame, Space.World);
+        transform.LookAt(_target);
     }
 
     void hitTarget()
     {
-        GameObject particles = Instantiate(_particles, _target.position, _target.rotation);
+        if (radius == 0)
+        {
+            destroy(_target);
+        } else
+        {
+            explode();
+        }
         
-        _target.GetComponent<Enemy>().EnemyHit(1);
+    }
+
+    void explode()
+    {
+        Collider[] colliders = Physics.OverlapSphere(transform.position, radius);
+        foreach (Collider collider in colliders)
+        {
+            if(collider.tag == "enemy")
+            {
+                destroy(collider.transform);
+            }
+        }
+    }
+
+    void destroy(Transform target)
+    {
+        GameObject particles = Instantiate(_particles, target.position, target.rotation);
+        target.GetComponent<Enemy>().EnemyHit(1);
         Destroy(gameObject);
         Destroy(particles, 1f);
-    }
+    } 
 }
