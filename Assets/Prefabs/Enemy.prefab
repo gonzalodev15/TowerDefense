@@ -107,5 +107,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 8
-  enemyLife: 6
+  enemyLife: 3
   enemyDamage: 1

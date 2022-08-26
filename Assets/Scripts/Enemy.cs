@@ -26,7 +26,7 @@ public class Enemy : MonoBehaviour
         if (waypointindex == Waypoints.points.Length)
         {
             gameObject.SetActive(false);
-            Base.substractBaseLife(1);
+            CurrencyManager.instance.substractLives(enemyDamage);
             Destroy(gameObject);
             return;
         }
@@ -53,7 +53,13 @@ public class Enemy : MonoBehaviour
         enemyLife -= turretDamage;
         if (enemyLife <= 0)
         {
+            CurrencyManager.instance.addMoney(20);
             Destroy(gameObject);
         }
+    }
+
+    private void updateLives()
+    {
+        //float livesCount = 
     }
 }

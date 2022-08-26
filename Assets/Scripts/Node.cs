@@ -47,7 +47,11 @@ public class Node : MonoBehaviour
 
         if (turret == null)
         {
-            turret = (GameObject) Instantiate(TurretManager.instance.getCurrentTurret(), transform.position + new Vector3(0, turretOffset, 0), transform.rotation);
+            GameObject currentTurret = TurretManager.instance.getCurrentTurret();
+            if (currentTurret == null) {
+                return;
+            }
+            turret = (GameObject) Instantiate(currentTurret, transform.position + new Vector3(0, turretOffset, 0), transform.rotation);
         } 
     }
 }
