@@ -14,4 +14,9 @@ public class Shop : MonoBehaviour
     {
         TurretManager.instance.setTurret(TurretManager.instance.missileTurret);
     }
+
+    public void selectLaserBeamer()
+    {
+        TurretManager.instance.setTurret(TurretManager.instance.laserBeamer);
+    }
 }

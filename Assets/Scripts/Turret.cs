@@ -8,6 +8,9 @@ public class Turret : MonoBehaviour
     Transform target;
     public Transform bullet;
     public Transform shootStartPoint;
+    public bool isLaser = false;
+    public LineRenderer lineRenderer;
+    public GameObject _particles;
     public float range = 15f;
 
     public float fireRate = 1f;
@@ -53,18 +56,48 @@ public class Turret : MonoBehaviour
         if (target == null)
             return;
 
+        lockTarget();
+
+        if (isLaser)
+        {
+            shootLaser();
+        } else
+        {
+            if (fireCountdown <= 0f)
+            {
+                Shoot();
+                fireCountdown = 1f / fireRate;
+            }
+
+            fireCountdown -= Time.deltaTime;
+        }
+    }
+
+    void shootLaser()
+    {
+        lineRenderer.SetPosition(0, shootStartPoint.position);
+        lineRenderer.SetPosition(1, target.position);
+        showParticles(target);
+        GameObject enemy = target.gameObject;
+        float speed = enemy.GetComponent<Enemy>().speed;
+        if (speed > 4.2) {
+            enemy.GetComponent<Enemy>().speed -= 0.3f;
+        }
+    }
+
+    void showParticles(Transform target)
+    {
+        GameObject particles = Instantiate(_particles, target.position, target.rotation);
+        target.GetComponent<Enemy>().EnemyHit(0.1f);
+        Destroy(particles, 0.3f);
+    }
+
+    void lockTarget()
+    {
         Vector3 dir = target.position - transform.position;
         Quaternion lookRotation = Quaternion.LookRotation(dir);
         Vector3 rotation = lookRotation.eulerAngles;
         partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
-
-        if (fireCountdown <= 0f)
-        {
-            Shoot();
-            fireCountdown = 1f / fireRate;
-        }
-
-        fireCountdown -= Time.deltaTime;
     }
 
     void Shoot()

@@ -8,8 +8,9 @@ public class TurretManager : MonoBehaviour
     public GameObject currentTurret;
     public GameObject standardTurret;
     public GameObject missileTurret;
+    public GameObject laserBeamer;
     public CurrencyManager currencyManager;
-    //public GameObject standardTurret;
+    
 
     private void Awake()
     {
@@ -54,6 +55,16 @@ public class TurretManager : MonoBehaviour
             if (currentCurrency >= 200)
             {
                 currencyManager.substractMoney(200);
+                return true;
+            }
+        }
+
+        if (currentTurret == laserBeamer)
+        {
+            float currentCurrency = currencyManager.getCurrency();
+            if (currentCurrency >= 300)
+            {
+                currencyManager.substractMoney(300);
                 return true;
             }
         }

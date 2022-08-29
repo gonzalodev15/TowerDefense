@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour
 {
 
     public float speed = 10f;
-    public int enemyLife = 3;
+    public float enemyLife = 3f;
     private Transform target;
     public int enemyDamage = 1;
     private int waypointindex = 0;
@@ -48,7 +48,7 @@ public class Enemy : MonoBehaviour
             return Waypoints.points[waypointindex];
     }
 
-    public void EnemyHit(int turretDamage)
+    public void EnemyHit(float turretDamage)
     {
         enemyLife -= turretDamage;
         if (enemyLife <= 0)
