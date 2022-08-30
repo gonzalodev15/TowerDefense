@@ -94,5 +94,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _particles: {fileID: 8341774197022220874, guid: b9ee783323d204970a3aa4058f070015,
     type: 3}
-  speed: 10
+  speed: 15
   radius: 0

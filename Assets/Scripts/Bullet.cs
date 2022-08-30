@@ -23,7 +23,7 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(_target == null)
+        if (_target == null)
         {
             Destroy(gameObject);
             return;
@@ -37,6 +37,7 @@ public class Bullet : MonoBehaviour
         }
         transform.Translate(dir.normalized*distanceThisFrame, Space.World);
         transform.LookAt(_target);
+
     }
 
     void hitTarget()

@@ -19,35 +19,38 @@ public class Turret : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("UpdateTarget", 2f, .5f);
+        InvokeRepeating("UpdateTarget", 0f, .5f);
     }
 
     void UpdateTarget()
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("enemy");
 
-        int index = -1;
-        float smallestDistance = Mathf.Infinity;
+        if (enemies.Length > 0) {
+            int index = -1;
+            float smallestDistance = Mathf.Infinity;
 
-        for (int i = 0; i < enemies.Length; i++)
-        {
-            float distance = Vector3.Distance(transform.position, enemies[i].transform.position);
-
-            if (distance < smallestDistance)
+            for (int i = 0; i < enemies.Length; i++)
             {
-                smallestDistance = distance;
-                index = i;
+                float distance = Vector3.Distance(transform.position, enemies[i].transform.position);
+
+                if (distance < smallestDistance)
+                {
+                    smallestDistance = distance;
+                    index = i;
+                }
+            }
+
+            if (enemies[index] != null && smallestDistance <= range)
+            {
+                target = enemies[index].transform;
+            }
+            else
+            {
+                target = null;
             }
         }
-
-        if (enemies[index] != null && smallestDistance <= range)
-        {
-            target = enemies[index].transform;
-        }
-        else
-        {
-            target = null;
-        }
+        
     }
 
     // Update is called once per frame
@@ -59,12 +62,13 @@ public class Turret : MonoBehaviour
         if (target == null && lineRenderer != null)
         {
             lineRenderer.enabled = false;
+            return;
         }
         else if (target != null && lineRenderer != null)
         {
             lineRenderer.enabled = true;
         }
-
+            
         lockTarget();
 
         if (isLaser)

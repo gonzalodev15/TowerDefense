@@ -240,6 +240,9 @@ MonoBehaviour:
   partToRotate: {fileID: 1316154461219203335}
   bullet: {fileID: 4361932741350329841, guid: 64fc9b9b4a46c461095dff9803f8fe45, type: 3}
   shootStartPoint: {fileID: 1316154460435142892}
+  isLaser: 0
+  lineRenderer: {fileID: 0}
+  _particles: {fileID: 0}
   range: 12.11
-  fireRate: 1
+  fireRate: 2.5
   fireCountdown: 0

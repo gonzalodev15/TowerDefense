@@ -27,6 +27,7 @@ Transform:
   m_LocalPosition: {x: -0.26, y: 3.56, z: 0.07}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 6272819208216984328}
   - {fileID: 6456982959391424388}
   - {fileID: 1985520795451552035}
   m_Father: {fileID: 3468006686908020496}
@@ -56,11 +57,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1947690914873165766}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.52, y: 3.36, z: 2.69}
+  m_LocalPosition: {x: -0.13, y: 0.1, z: 2.08}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 3468006686908020496}
-  m_RootOrder: 2
+  m_Father: {fileID: 2355418821580098821}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4223963862739661501
 GameObject:
@@ -92,7 +93,7 @@ Transform:
   m_LocalScale: {x: 99.999985, y: 100, z: 99.999985}
   m_Children: []
   m_Father: {fileID: 2355418821580098821}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!33 &1665244510860527011
 MeshFilter:
@@ -172,7 +173,6 @@ Transform:
   m_Children:
   - {fileID: 7599690124439447842}
   - {fileID: 2355418821580098821}
-  - {fileID: 6272819208216984328}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -189,8 +189,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partToRotate: {fileID: 2355418821580098821}
-  bullet: {fileID: 9164681888374878256, guid: 695faa7d4e4d44cb8b017ace97b03a68, type: 3}
+  bullet: {fileID: 6023167232847910389, guid: 695faa7d4e4d44cb8b017ace97b03a68, type: 3}
   shootStartPoint: {fileID: 6272819208216984328}
+  isLaser: 0
+  lineRenderer: {fileID: 0}
+  _particles: {fileID: 0}
   range: 15
   fireRate: 1
   fireCountdown: 0
@@ -224,7 +227,7 @@ Transform:
   m_LocalScale: {x: 60, y: 60, z: 60}
   m_Children: []
   m_Father: {fileID: 2355418821580098821}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!33 &3320289214329803163
 MeshFilter:
