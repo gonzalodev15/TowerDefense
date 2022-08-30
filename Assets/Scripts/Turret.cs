@@ -19,7 +19,7 @@ public class Turret : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("UpdateTarget", 8f, .5f);
+        InvokeRepeating("UpdateTarget", 2f, .5f);
     }
 
     void UpdateTarget()
@@ -53,8 +53,17 @@ public class Turret : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (target == null)
+        if (target == null && lineRenderer == null)
             return;
+
+        if (target == null && lineRenderer != null)
+        {
+            lineRenderer.enabled = false;
+        }
+        else if (target != null && lineRenderer != null)
+        {
+            lineRenderer.enabled = true;
+        }
 
         lockTarget();
 
@@ -77,18 +86,18 @@ public class Turret : MonoBehaviour
     {
         lineRenderer.SetPosition(0, shootStartPoint.position);
         lineRenderer.SetPosition(1, target.position);
-        showParticles(target);
         GameObject enemy = target.gameObject;
         float speed = enemy.GetComponent<Enemy>().speed;
         if (speed > 4.2) {
             enemy.GetComponent<Enemy>().speed -= 0.3f;
         }
+        showParticles(target);
     }
 
     void showParticles(Transform target)
     {
         GameObject particles = Instantiate(_particles, target.position, target.rotation);
-        target.GetComponent<Enemy>().EnemyHit(0.1f);
+        target.GetComponent<Enemy>().EnemyHit(0.03f);
         Destroy(particles, 0.3f);
     }
 

@@ -3958,6 +3958,9 @@ MonoBehaviour:
   partToRotate: {fileID: 87446535}
   bullet: {fileID: 4361932741350329841, guid: 64fc9b9b4a46c461095dff9803f8fe45, type: 3}
   shootStartPoint: {fileID: 991142139}
+  isLaser: 0
+  lineRenderer: {fileID: 0}
+  _particles: {fileID: 0}
   range: 12.11
   fireRate: 1
   fireCountdown: 0
@@ -4883,6 +4886,9 @@ MonoBehaviour:
   partToRotate: {fileID: 199674556}
   bullet: {fileID: 4361932741350329841, guid: 64fc9b9b4a46c461095dff9803f8fe45, type: 3}
   shootStartPoint: {fileID: 2089230100}
+  isLaser: 0
+  lineRenderer: {fileID: 0}
+  _particles: {fileID: 0}
   range: 12.11
   fireRate: 1
   fireCountdown: 0
@@ -6538,6 +6544,9 @@ MonoBehaviour:
   partToRotate: {fileID: 1919433039}
   bullet: {fileID: 4361932741350329841, guid: 64fc9b9b4a46c461095dff9803f8fe45, type: 3}
   shootStartPoint: {fileID: 1844394951}
+  isLaser: 0
+  lineRenderer: {fileID: 0}
+  _particles: {fileID: 0}
   range: 12.11
   fireRate: 1
   fireCountdown: 0
@@ -6818,6 +6827,9 @@ MonoBehaviour:
   partToRotate: {fileID: 2074535887}
   bullet: {fileID: 4361932741350329841, guid: 64fc9b9b4a46c461095dff9803f8fe45, type: 3}
   shootStartPoint: {fileID: 863558496}
+  isLaser: 0
+  lineRenderer: {fileID: 0}
+  _particles: {fileID: 0}
   range: 12.11
   fireRate: 1
   fireCountdown: 0
@@ -9976,6 +9988,9 @@ MonoBehaviour:
   partToRotate: {fileID: 507037447}
   bullet: {fileID: 4361932741350329841, guid: 64fc9b9b4a46c461095dff9803f8fe45, type: 3}
   shootStartPoint: {fileID: 1921850284}
+  isLaser: 0
+  lineRenderer: {fileID: 0}
+  _particles: {fileID: 0}
   range: 12.11
   fireRate: 1
   fireCountdown: 0
@@ -10286,6 +10301,9 @@ MonoBehaviour:
   partToRotate: {fileID: 1472517902}
   bullet: {fileID: 4361932741350329841, guid: 64fc9b9b4a46c461095dff9803f8fe45, type: 3}
   shootStartPoint: {fileID: 753266324}
+  isLaser: 0
+  lineRenderer: {fileID: 0}
+  _particles: {fileID: 0}
   range: 12.11
   fireRate: 1
   fireCountdown: 0
@@ -13778,7 +13796,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 600
+  m_Text: 200
 --- !u!222 &1435506822
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15663,6 +15681,9 @@ MonoBehaviour:
   partToRotate: {fileID: 1456021216}
   bullet: {fileID: 4361932741350329841, guid: 64fc9b9b4a46c461095dff9803f8fe45, type: 3}
   shootStartPoint: {fileID: 1240102853}
+  isLaser: 0
+  lineRenderer: {fileID: 0}
+  _particles: {fileID: 0}
   range: 12.11
   fireRate: 1
   fireCountdown: 0
@@ -16393,6 +16414,9 @@ MonoBehaviour:
   partToRotate: {fileID: 1389227283}
   bullet: {fileID: 4361932741350329841, guid: 64fc9b9b4a46c461095dff9803f8fe45, type: 3}
   shootStartPoint: {fileID: 1789866894}
+  isLaser: 0
+  lineRenderer: {fileID: 0}
+  _particles: {fileID: 0}
   range: 12.11
   fireRate: 1
   fireCountdown: 0
@@ -17232,6 +17256,9 @@ MonoBehaviour:
   partToRotate: {fileID: 1702348630}
   bullet: {fileID: 4361932741350329841, guid: 64fc9b9b4a46c461095dff9803f8fe45, type: 3}
   shootStartPoint: {fileID: 1507182699}
+  isLaser: 0
+  lineRenderer: {fileID: 0}
+  _particles: {fileID: 0}
   range: 12.11
   fireRate: 1
   fireCountdown: 0
@@ -17363,6 +17390,9 @@ MonoBehaviour:
   partToRotate: {fileID: 512980226}
   bullet: {fileID: 4361932741350329841, guid: 64fc9b9b4a46c461095dff9803f8fe45, type: 3}
   shootStartPoint: {fileID: 236024577}
+  isLaser: 0
+  lineRenderer: {fileID: 0}
+  _particles: {fileID: 0}
   range: 12.11
   fireRate: 1
   fireCountdown: 0
@@ -20691,6 +20721,9 @@ MonoBehaviour:
   partToRotate: {fileID: 592921350}
   bullet: {fileID: 4361932741350329841, guid: 64fc9b9b4a46c461095dff9803f8fe45, type: 3}
   shootStartPoint: {fileID: 7106087282714473512}
+  isLaser: 0
+  lineRenderer: {fileID: 0}
+  _particles: {fileID: 0}
   range: 12.11
   fireRate: 1
   fireCountdown: 0
